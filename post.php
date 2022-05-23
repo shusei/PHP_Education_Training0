@@ -8,14 +8,11 @@
   $username = $_POST['username']; 
   $content = $_POST['content'];
 
-  $sql = "INSERT INTO test(username, content) VALUES('$username', '$content')";
+  $sql = "INSERT INTO board(username, content) VALUES('$username', '$content')";
 
-
-  $result = $conn->query($sql);
-
-  if (!$result) {
+  if (!$conn->query($sql)) {
     die($conn->error);
   }
 
-    header("Location: index2.php");
+  header("Location: index.php");
 ?>
